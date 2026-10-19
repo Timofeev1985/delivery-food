@@ -415,22 +415,31 @@ button {
   display: none;
   z-index: 999;
 }
-
+.is-open {
+  display: flex;
+}
 .modal-auth {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  display: none;
   z-index: 999;
 }
 
-.is-open {
-  display: flex;
+.modal-auth.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
 }
-
+.modal-auth.is-open .modal-dialog-auth {
+  transform: translateY(0);
+  opacity: 1;
+}
 .modal-dialog {
   max-width: 780px;
   width: 95%;
@@ -443,6 +452,11 @@ button {
 .modal-dialog-auth {
   width: auto;
   position: relative;
+  opacity: 0;
+  transform: translateY(-25%);
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
 }
 
 .label-auth {
