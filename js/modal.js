@@ -1,4 +1,6 @@
 const modal = document.querySelector(".modal-auth");
+const modalCart = document.querySelector(".button-cart");
+
 const modalDialog = document.querySelector(".modal-dialog-auth");
 document.addEventListener("click", (e) => {
   console.log(e.composedPath());
@@ -10,6 +12,15 @@ document.addEventListener("click", (e) => {
   ) {
     e.preventDefault();
     modal.classList.toggle("is-open");
+  }
+  if (
+    e.target.dataset.toggle == "modal-cart" ||
+    e.target.parentNode.dataset.toggle == "modal-cart" ||
+    (!e.composedPath().includes(modalDialog) &&
+      modalCart.classList.contains("is-open"))
+  ) {
+    e.preventDefault();
+    modalCart.classList.toggle("is-open");
   }
 });
 document.addEventListener("keyup", (event) => {

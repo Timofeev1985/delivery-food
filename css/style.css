@@ -436,7 +436,16 @@ button {
   visibility: visible;
   opacity: 1;
 }
+.modal-cart.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+}
 .modal-auth.is-open .modal-dialog-auth {
+  transform: translateY(0);
+  opacity: 1;
+}
+.modal-cart.is-open .modal-dialog {
   transform: translateY(0);
   opacity: 1;
 }
