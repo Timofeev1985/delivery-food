@@ -1,7 +1,6 @@
 const modal = document.querySelector(".modal-auth");
-const modalCart = document.querySelector(".modal-cart");
 
-const modalDialog = document.querySelector(".modal-dialog");
+const modalDialog = document.querySelector(".modal-dialog-auth");
 document.addEventListener("click", (e) => {
   console.log(e.composedPath());
   if (
